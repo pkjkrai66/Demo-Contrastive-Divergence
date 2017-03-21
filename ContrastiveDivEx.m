@@ -38,26 +38,28 @@ X = normrnd(mu_R, sig_R, [1000,1]);
 
 param0 = [3.5, 5, 2.5, 4.5];
 deltaParam = 0.005;
-param = param0;
+temp_param = param0;
 
 for i = 1:100
-    deriv_wrtParam = Cont_Derig_Derivatives(X, param(i,:));
+    deriv_wrtParam = Cont_Derig_Derivatives(X, temp_param);
 
     jumpin_sigma = .05;
     Xprime = normrnd(X, jumpin_sigma);
     
     % M-H sampling
     
-    logliklihood_X = sum(-(X-param(1)).^2/param(3)^2)+sum(-(X-param(2)).^2/param(4)^2);
-    logliklihood_Xprime = sum(-(Xprime-param(1)).^2/param(3)^2)+sum(-(Xprime-param(2)).^2/param(4)^2);
+    logliklihood_X = sum(-(X-temp_param(1)).^2/temp_param(3)^2) + ...
+                     sum(-(X-temp_param(2)).^2/temp_param(4)^2);
     
-    
+    logliklihood_Xprime = sum(-(Xprime-temp_param(1)).^2/temp_param(3)^2)+...
+                          sum(-(Xprime-temp_param(2)).^2/temp_param(4)^2);
+        
     CompareLikli = logliklihood_Xprime - logliklihood_X;
     f = min(0, CompareLikli);
     r = rand;
     if f>r
-        deriv_wrtParamPrime = Cont_Derig_Derivatives(Xprime, param(i,:));
-        param(i+1,:) = param(i) + deltaParam*(deriv_wrtParam-deriv_wrtParamPrime);
+        deriv_wrtParamPrime = Cont_Derig_Derivatives(Xprime, temp_param);
+        temp_param(i+1,:) = temp_param + deltaParam*(deriv_wrtParam-deriv_wrtParamPrime);
     end
 end
 
