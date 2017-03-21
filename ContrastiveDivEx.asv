@@ -32,11 +32,11 @@ legend('Dist1*Dist2')
 
 X = normrnd(mu, sig, [1000,1]);
 
-delg_mu1 = (XX - mu1_guess)/sig1_guess^2;
-delg_mu2 = (XX - mu2_guess)/sig2_guess^2;
+delg_mu1 = (XX - mu1)/sig1^2;
+delg_mu2 = (XX - mu2)/sig2^2;
 
-delg_sig1 = (XX - mu1_guess)^2/sig1_guess^3;
-delg_sig2 = (XX - mu2_guess)^2/sig2_guess^3;
+delg_sig1 = (XX - mu1)^2/sig1^3;
+delg_sig2 = (XX - mu2)^2/sig2^3;
 
 
 % parameters = [mean1 mean2 sigma1 sigma2]
