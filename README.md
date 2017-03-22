@@ -25,11 +25,11 @@ $$\frac{\partial log(g)}{\partial\mu_i} = \frac {(x-\mu_i )}{\sigma_i ^{2}}$$
 
 $$\frac{\partial log(g)}{\partial \sigma_i} = -\frac{1}{\sigma_i}+\frac {(x-\mu_i )^2}{\sigma_i ^{3}}$$
 
-dfg
-dfg
+![](Formula2.JPG)
+
 <img src="http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7B%5Cpartial%5Enf%7D%7B%5Cpartial%20x%5En%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" \frac{\partial^nf}{\partial x^n} " width="32" height="44" />
 
-[img]http://bit.ly/1R4Rrh5[/img]
+
 
 
 
