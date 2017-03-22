@@ -1,13 +1,14 @@
-# Contrastive Divergence
-This is a Matlab code demonstrating the approach of Contrastive Divergence for estimating parameters of models/Probabilistic distributions of Product of Expert
+ # Contrastive Divergence
+This is a Matlab code demonstrating the approach of Contrastive Divergence for estimating parameters of models/Probabilistic distributions for Product of Expert approach.
 
 
-Data is generated from a Gaussian distribution which is multiplication of two Gaussian distributions with some mean and standard deviation. Here the purpose is to predict the  means and stds of the two Gaussians.
+Data is generated from a Gaussian distribution which is multiplication of two Gaussian distributions with some mean and standard deviation. Here the purpose is to predict the  means and stds of the two Gaussians given the data only.
 The original paper discusses about the contrastive divergence is by Hinton and [available here][d4a65028]. A relatively easy to understand version is [available here][1755ad6c].
-For two Gaussian distributions $\mu_1, \sigma_1$ and $\mu_2, \sigma_2$, the product is proportional to a Normal Distribution given by mean and standard deviation as follows:
+For two Gaussian distributions $\mu_1, \sigma_1$ and $\mu_2, \sigma_2$, their product is proportional to a Normal Distribution given by mean and standard deviation as follows:
 $$\mu = \frac{\mu_1 \sigma_2^2+\mu_2 \sigma_1^2}{\sigma_1^2+ \sigma_2^2}$$
 
 $$\sigma = \left[\frac{ \sigma_1^2 \sigma_2^2}{\sigma_1^2+ \sigma_2^2}\right]^{1/2} $$
+> Detailed Gaussian manipulations are available athttp://www.tina-vision.net/docs/memos/2003-003.pdf
 
 In the Matlab code data is generated with above mean and standard deviation and then the four parameters $\mu_1, \sigma_1, \mu_2, \sigma_2$ were estimated.
 
@@ -24,13 +25,6 @@ $$ log(g) = -log({\sqrt {2\pi } \sigma_i}\;) -{\frac {(x-\mu_i )^2}{2\sigma_i ^{
 $$\frac{\partial log(g)}{\partial\mu_i} = \frac {(x-\mu_i )}{\sigma_i ^{2}}$$
 
 $$\frac{\partial log(g)}{\partial \sigma_i} = -\frac{1}{\sigma_i}+\frac {(x-\mu_i )^2}{\sigma_i ^{3}}$$
-
-![](Formula2.JPG)
-
-<img src="http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7B%5Cpartial%5Enf%7D%7B%5Cpartial%20x%5En%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" \frac{\partial^nf}{\partial x^n} " width="32" height="44" />
-
-
-
 
 
 
