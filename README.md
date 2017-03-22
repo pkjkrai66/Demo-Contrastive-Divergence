@@ -26,6 +26,10 @@ $$\frac{\partial log(g)}{\partial\mu_i} = \frac {(x-\mu_i )}{\sigma_i ^{2}}$$
 $$\frac{\partial log(g)}{\partial \sigma_i} = -\frac{1}{\sigma_i}+\frac {(x-\mu_i )^2}{\sigma_i ^{3}}$$
 
 
+[img]http://bit.ly/1R4Rrh5[/img]
+
+
+
 
   [1755ad6c]: http://www.robots.ox.ac.uk/~ojw/files/NotesOnCD.pdf "Notes on Contrastive Divergence"
   [d4a65028]: http://www.cs.toronto.edu/~fritz/absps/tr00-004.pdf "Training Products of Experts by Minimizing Contrastive Divergence"
